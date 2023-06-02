@@ -1,0 +1,28 @@
+<html>
+    <head><title>ADD TURF</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/addturf.css' %}">
+    </head>
+    <body background="{% static 'images/turf1.jpg' %}" width="1920px" height="1080px">
+        <div class="form_container">
+        <form method="post" action="/turfadd/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Turf Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label> 
+            <input type="text" name="turfname"><br><br>
+            <label>Contact Number : </label>
+            <input type="text" name="contactnumber"><br><br>
+            <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <input type="email" name="email"><br><br>
+            <label>Working Hours &nbsp;: </label>
+            <input type="text" name="workinghours"><br><br>
+            <label>Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <textarea name="location" rows="10" cols="40"></textarea><br><br>
+            <label>Fee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <input type="text" name="fee"><br><br>
+            <label>Photo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <input type="file" name="photos"><br><br><br><br>
+            <button>ADD TURF</button>
+        </form>
+        </div>
+    </body>
+</html>
