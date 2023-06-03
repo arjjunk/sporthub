@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.core.files.storage import FileSystemStorage
 from turf.models import tbl_turf
 from django.db import models
@@ -36,3 +36,8 @@ def turfadd(request):
 def viewturf(request):
     data = tbl_turf.objects.all()
     return render(request,"viewturf.html", {'data1':data})
+
+def removeturf(request,id):
+    data = tbl_turf.objects.get(id=id)
+    data.delete()
+    return redirect('/viewturf')
