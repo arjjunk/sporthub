@@ -32,3 +32,7 @@ def turfadd(request):
         data.turf_id = "TF"+str(data.id)
         data.save()
     return render(request,"addturf.html")
+
+def viewturf(request):
+    data = tbl_turf.objects.all()
+    return render(request,"viewturf.html", {'data1':data})

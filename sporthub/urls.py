@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('turfowner/',views.turfowner),
     path('addturf/',views.addturf),
-    path('turfadd/',views.turfadd)
+    path('turfadd/',views.turfadd),
+    path('viewturf/',views.viewturf),
 ]
 
 if settings.DEBUG:
