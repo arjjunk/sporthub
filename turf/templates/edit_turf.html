@@ -1,0 +1,27 @@
+<html>
+    <head><title>EDIT TURF</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/addturf.css' %}">
+    </head>
+    <body background="{% static 'images/turf1.jpg' %}" width="1920px" height="1080px">
+        <div class="form_container">
+        <form method="post" action="/update_turf/{{data1.id}}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Turf Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label> 
+            <input type="text" name="turfname" value="{{data1.turf_name}}"><br><br>
+            <label>Contact Number : </label>
+            <input type="text" name="contactnumber" value="{{data1.contact_no}}"><br><br>
+            <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <input type="email" name="email" value="{{data1.email}}"><br><br>
+            <label>Working Hours &nbsp;: </label>
+            <input type="text" name="workinghours" value="{{data1.working_hrs}}"><br><br>
+            <label>Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <textarea name="location" rows="10" cols="40" readonly>{{data1.location}}</textarea><br><br>
+            <label>Fee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+            <input type="text" name="fee" value="{{data1.fee}}"><br><br>
+
+            <button>EDIT TURF</button>
+        </form>
+        </div>
+    </body>
+</html>
