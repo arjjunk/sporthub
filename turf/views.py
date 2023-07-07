@@ -6,10 +6,11 @@ from django.db import models
 # Create your views here.
 
 def turfowner(request):
-    return render(request,"turfowner.html")
+    data = tbl_turf.objects.all()
+    return render(request,"turfowner1.html", {'data1':data})
 
-def addturf (request):
-    return render(request,"addturf.html")  
+def addturf(request):
+    return render(request,"addturf1.html")  
 
 def turfadd(request):
     if request.method == 'POST':
@@ -31,7 +32,7 @@ def turfadd(request):
         data.save()
         data.turf_id = "TF"+str(data.id)
         data.save()
-    return render(request,"addturf.html")
+    return render(request,"addturf1.html")
 
 def viewturf(request):
     data = tbl_turf.objects.all()

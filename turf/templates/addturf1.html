@@ -1,35 +1,3 @@
-<!-- <html>
-
-<head>
-    <title>EDIT TURF</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/addturf.css' %}">
-</head>
-
-<body background="{% static 'images/turf1.jpg' %}" width="1920px" height="1080px">
-    <div class="form_container">
-        <form method="post" action="/update_turf/{{data1.id}}" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label>Turf Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
-            <input type="text" name="turfname" value="{{data1.turf_name}}"><br><br>
-            <label>Contact Number : </label>
-            <input type="text" name="contactnumber" value="{{data1.contact_no}}"><br><br>
-            <label>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
-            <input type="email" name="email" value="{{data1.email}}"><br><br>
-            <label>Working Hours &nbsp;: </label>
-            <input type="text" name="workinghours" value="{{data1.working_hrs}}"><br><br>
-            <label>Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
-            <textarea name="location" rows="10" cols="40" readonly>{{data1.location}}</textarea><br><br>
-            <label>Fee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
-            <input type="text" name="fee" value="{{data1.fee}}"><br><br>
-
-            <button>EDIT TURF</button>
-        </form>
-    </div>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,44 +46,47 @@
       <div class="col-sm-4"></div>
       <div class="col-sm-4" style="background-color: rgba(247, 217, 217, 0.557);">
         <br>
-        <h5 style="text-align: center;">Edit Turf Details</h5>
-        <form method="post" action="/update_turf/{{data1.id}}" enctype="multipart/form-data">
+        <h5 style="text-align: center;">Add Your Turf</h5>
+        <form method="post" action="/turfadd/" enctype="multipart/form-data">
           {% csrf_token %}
 
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Name of Turf" name="turfname" value="{{data1.turf_name}}">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name of Turf" name="turfname">
             <label for="floatingInput" class="form-label">Turf Name</label>
 
           </div>
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput2" placeholder="Contact Number"
-              name="contactnumber" value="{{data1.contact_no}}">
+              name="contactnumber">
             <label for="floatingInput2" class="form-label">Contact Number </label>
 
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput1" placeholder="Your email" name="email" value="{{data1.email}}">
+            <input type="email" class="form-control" id="floatingInput1" placeholder="Your email" name="email">
             <label for="floatingInput1" class="form-label">Email </label>
 
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput2" placeholder="Working Hours" name="workinghours" value="{{data1.working_hrs}}">
+            <input type="text" class="form-control" id="floatingInput2" placeholder="Working Hours" name="workinghours">
             <label for="floatingInput2" class="form-label">Working Hours</label>
 
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control" id="floatingTextarea" rows="3" name="location" readonly>{{data1.location}}</textarea>
+            <textarea class="form-control" id="floatingTextarea" rows="3" name="location"></textarea>
             <label for="floatingTextarea" class="form-label">Address</label>
 
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput2" placeholder="Fee per Hour" name="fee" value="{{data1.fee}}">
+            <input type="text" class="form-control" id="floatingInput2" placeholder="Fee per Hour" name="fee">
             <label for="floatingInput2" class="form-label">Fee</label>
 
           </div>
-<br>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Photos</label>
+            <input class="form-control" type="file" id="formFile" name="photos">
+          </div><br>
           <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-success" type="submit" style="font-weight: bolder;">Edit Details</button><br>
+            <button class="btn btn-success" type="submit" style="font-weight: bolder;">Submit</button><br>
           </div>
         </form>
 
